@@ -1,0 +1,16 @@
+body{
+    background-color: navajowhite;
+    /* color: white; */
+}
+.jumbotron{
+    background-color: olivedrab;
+    color:black;
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-self: center;
+}
+/* button{
+
+} */

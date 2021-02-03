@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Covid</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="js/script.js"></script>
+</head>
+
+<body ng-app="Myapp" ng-controller="Myctrl">
+    <div class="container">
+        <div class="jumbotron py-5 mt-5">
+            <h1 class="text-center py-3"> <b>{{title}}</b></h1>
+
+            <!-- On click ....changevalue  -->
+            <!-- <button ng-click= "changevalue()"> Button</button> -->
+
+            <p class="population text-center">
+                Coronavirus disease (COVID-19) is an infectious disease caused by a newly discovered coronavirus.
+                Most people who fall sick with COVID-19 will experience mild to moderate symptoms and recover without
+                special treatment. </p>
+
+            <p class="population text-center">
+                <b>HOW IT SPREADS?</b>
+                <!-- <br /> -->
+
+                The virus that causes COVID-19 is mainly transmitted through droplets generated when an infected person
+                coughs, sneezes, or exhales. These droplets are too heavy to hang in the air, and quickly fall on floors
+                or
+                surfaces.
+                You can be infected by breathing in the virus if you are within close proximity of someone who has
+                COVID-19,
+                or by touching a contaminated surface and then your eyes, nose or mouth.
+            </p>
+            <!-- all data -->
+
+            <div class="row text-center py-3">
+                <div class="col-md-4">
+                    <div class="card py-3 bg-warning">
+                        <h3>
+                            Confirmed Cases
+                        </h3>
+                        <h3>
+                            {{all_data.confirmed.value}}
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card py-3 bg-success">
+                        <h3>
+                            Recovered Cases
+                        </h3>
+                        <h3>
+                            {{all_data.recovered.value}}
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card py-3 bg-danger">
+                        <h3>
+                            Death Cases
+                        </h3>
+                        <h3>
+                            {{all_data.deaths.value}}
+                        </h3>
+                    </div>
+                </div>
+            </div>
+            <!-- end data here -->
+
+            <input type="text" class="form-control mt-4" placeholder="Enter Country Name Here" ng-model="c"
+                ng-change="get_country_data()" />
+
+            <!-- Counteries data -->
+            <div class="container-fluid" ng-if="c_data">
+                <h3 class="text-center mt-4 text-uppercase"><b>{{c}} Covid Cases status </b></h3>
+                <div class="row text-center py-3">
+                    <div class="col-md-4">
+                        <div class="card py-3 bg-warning">
+                            <h3>
+                                Confirmed Cases
+                            </h3>
+                            <h3>
+                                {{c_data.confirmed.value}}
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card py-3 bg-success">
+                            <h3>
+                                Recovered Cases
+                            </h3>
+                            <h3>
+                                {{c_data.recovered.value}}
+                            </h3>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card py-3 bg-danger">
+                            <h3>
+                                Death Cases
+                            </h3>
+                            <h3>
+                                {{c_data.deaths.value}}
+                            </h3>
+                        </div>
+                    </div>
+                </div>
+                <!-- end Counteries data here -->
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
